@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["../src/index.ts"],
-  "sourcesContent": ["import { APIGatewayProxyEvent, APIGatewayProxyResult } from \"aws-lambda\";\n\nexport const handler = async (\n    event: APIGatewayProxyEvent\n): Promise<APIGatewayProxyResult> => {\n    const queries = event.queryStringParameters;\n    let name = 'there';\n\n    if (queries !== null && queries !== undefined) {\n        if (queries[\"name\"]) {\n            name = queries[\"name\"];\n        }\n    }\n\n    return {\n        statusCode: 200,\n        headers: {\n            'Content-Type': 'text/html; charset=utf-8',\n        },\n        body: `<p>Hello ${name}!</p>`,\n    }\n}\n"],
-  "mappings": ";;;;;;;;AAAA;AAAA;AAAA;AAAA;AAEO,IAAM,UAAU,OACnB,UACiC;AACjC,QAAM,UAAU,MAAM;AACtB,MAAI,OAAO;AAEX,MAAI,YAAY,QAAQ,YAAY,QAAW;AAC3C,QAAI,QAAQ,SAAS;AACjB,aAAO,QAAQ;AAAA;AAAA;AAIvB,SAAO;AAAA,IACH,YAAY;AAAA,IACZ,SAAS;AAAA,MACL,gBAAgB;AAAA;AAAA,IAEpB,MAAM,YAAY;AAAA;AAAA;",
+  "sourcesContent": ["import { APIGatewayProxyEventV2, APIGatewayProxyResultV2 } from \"aws-lambda\";\n\nexport const handler = async (\n    event: APIGatewayProxyEventV2\n): Promise<APIGatewayProxyResultV2> => {\n    const queries = event.queryStringParameters;\n    let name = 'there';\n\n    if (queries !== null && queries !== undefined) {\n        if (queries[\"name\"]) {\n            name = queries[\"name\"];\n        }\n    }\n\n    return {\n        statusCode: 200,\n        headers: {\n            'Content-Type': 'text/html; charset=utf-8',\n        },\n        body: `<p>Hello ${name}!</p>`,\n    }\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAEO,IAAM,UAAU,OACnB,UACmC;AACnC,QAAM,UAAU,MAAM;AACtB,MAAI,OAAO;AAEX,MAAI,YAAY,QAAQ,YAAY,QAAW;AAC3C,QAAI,QAAQ,MAAM,GAAG;AACjB,aAAO,QAAQ,MAAM;AAAA,IACzB;AAAA,EACJ;AAEA,SAAO;AAAA,IACH,YAAY;AAAA,IACZ,SAAS;AAAA,MACL,gBAAgB;AAAA,IACpB;AAAA,IACA,MAAM,YAAY,IAAI;AAAA,EAC1B;AACJ;",
   "names": []
 }
